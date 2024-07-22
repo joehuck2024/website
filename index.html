@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Download and Redirect</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // URL of the file to download
+            var fileUrl = "https://www.whitehouse.gov/wp-content/uploads/2024/02/Health-Summary-2.28.pdf";
+            var link = document.createElement("a");
+            link.href = fileUrl;
+            link.download = "file.pdf";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            // Redirect to Adobe's website after a delay
+            setTimeout(function() {
+                window.location.href = "https://www.adobe.com";
+            }, 3000); // Adjust the delay as needed (3000ms = 3 seconds)
+        });
+    </script>
+</head>
+<body>
+    <h1>Downloading file...</h1>
+</body>
+</html>
